@@ -36,11 +36,12 @@
     "validator": "3.19.0"
   },
   "devDependencies": {
-    "supertest": "0.13.0",
-    "mocha": "1.21.4",
-    "should": "4.0.4",
     "chai": "1.9.1",
-    "sails-generate-auth": "0.1.6"
+    "mocha": "1.21.4",
+    "sails-generate-auth": "0.1.6",
+    "sails-mongo": "^0.11.2",
+    "should": "4.0.4",
+    "supertest": "0.13.0"
   },
   "engines": {
     "node": "0.10.x"
