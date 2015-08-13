@@ -11,6 +11,15 @@
  * For more information on the Sails logger, check out:
  * http://sailsjs.org/#/documentation/concepts/Logging
  */
+var winston = require('winston');
+var customLogger = new winston.Logger({
+    transports: [
+        new(winston.transports.File)({
+            level: 'debug',
+            filename: './logs/application.log'
+        }),
+    ],
+});
 module.exports = {
   /***************************************************************************
    *                                                                          *
@@ -25,6 +34,6 @@ module.exports = {
    ***************************************************************************/
   log: {
     level: 'info',
-    filePath: 'logs/application.log'
+    filePath: './logs/application.log'
   }
 };

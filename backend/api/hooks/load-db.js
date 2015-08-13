@@ -25,13 +25,35 @@ module.exports = function hook(sails) {
           } else {
             sails.log.verbose(__filename + ':' + __line + ' [Hook.load-db] Populating database with fixture data...');
 
-            var _ = require('lodash');
-            var Barrels = require('barrels');
-            var barrels = new Barrels();
-            var fixtures = _.keys(barrels.data);
+            var _ = require('lodash');                       
+            var conn = sails.config.connections.someMongodbServer.database;
+            var fixtures = require('pow-mongodb-fixtures').connect(conn);
+      
+            //File (loads content from data.js file)
+            var dir = '../../test/fixtures/js/';
+            fixtures.load(dir +'data.js', function(){
+              next();
+            });
 
-            // Do actual database population
-            barrels.populate(fixtures, next, false);
+            // var Barrels = require('barrels');
+            // var barrels = new Barrels();            
+            // //barrels.populate(fixtures, next, true);
+            // barrels.populate(['user'], function(err) {              
+            //   if (err)
+            //     console.log(err); // Higher level callback              
+            //   next();
+            //   // Users will already be populated here, so the required association should work
+            //   barrels.populate(['passport'], function(err) {
+            //     if (err)
+            //       console.log(err); // Higher level callback            
+            //       // Do your thing...
+            //       next();
+            //     });
+            // });
+            // var fixtures = _.keys(barrels.data);
+            // // Do actual database population
+            // barrels.populate(fixtures, next, false);
+            //next();
           }
         })
       ;
