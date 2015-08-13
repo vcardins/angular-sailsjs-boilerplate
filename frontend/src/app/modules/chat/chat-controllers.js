@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.chat' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.modules.chat' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -25,7 +25,7 @@
    *  3) do not load all messages when user enters to chat
    *  4) add notification about new chat messages, if user is elsewhere on app
    */
-  angular.module('frontend.examples.chat')
+  angular.module('frontend.modules.chat')
     .controller('ChatController', [
       '$scope', '$timeout', '$localStorage',
       'moment',

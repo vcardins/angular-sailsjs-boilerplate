@@ -13,13 +13,13 @@
       function factory(AccessLevels) {
         return [
           {
-            state: 'examples.about',
+            state: 'modules.about',
             title: 'About',
             access: AccessLevels.anon
           },
           {
-            state: 'examples',
-            title: 'Examples',
+            state: 'modules',
+            title: 'Modules',
             access: AccessLevels.user
           },
           {
@@ -38,24 +38,24 @@
       'AccessLevels',
       function factory(AccessLevels) {
         var items = {
-          'examples': [
+          'modules': [
             {
-              state: 'examples.books',
+              state: 'modules.books',
               title: 'Books',
               access: AccessLevels.user
             },
             {
-              state: 'examples.authors',
+              state: 'modules.authors',
               title: 'Authors',
               access: AccessLevels.user
             },
             {
-              state: 'examples.messages',
+              state: 'modules.messages',
               title: 'Messages',
               access: AccessLevels.user
             },
             {
-              state: 'examples.chat',
+              state: 'modules.chat',
               title: 'Chat',
               access: AccessLevels.user
             }
@@ -228,7 +228,7 @@
          * @type    {{}}
          */
         var data = {
-          'examples.books': {
+          'modules.books': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Book.js',
@@ -248,28 +248,28 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/book/book.js',
+                url: repository + 'frontend/src/app/modules/book/book.js',
                 title: 'book.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/book/book-controllers.js',
+                url: repository + 'frontend/src/app/modules/book/book-controllers.js',
                 title: 'book-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/book/book-models.js',
+                url: repository + 'frontend/src/app/modules/book/book-models.js',
                 title: 'book-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/book/list.html',
+                url: repository + 'frontend/src/app/modules/book/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
             ]
           },
-          'examples.authors': {
+          'modules.authors': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Author.js',
@@ -289,41 +289,41 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/author/author.js',
+                url: repository + 'frontend/src/app/modules/author/author.js',
                 title: 'author.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/author/author-controllers.js',
+                url: repository + 'frontend/src/app/modules/author/author-controllers.js',
                 title: 'author-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/author/author-models.js',
+                url: repository + 'frontend/src/app/modules/author/author-models.js',
                 title: 'author-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/author/list.html',
+                url: repository + 'frontend/src/app/modules/author/list.html',
                 title: 'list.html',
                 info: types.generic.template
               }
             ]
           },
-          'examples.messages': {
+          'modules.messages': {
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/messages/messages.js',
+                url: repository + 'frontend/src/app/modules/messages/messages.js',
                 title: 'messages.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/messages/messages-controllers.js',
+                url: repository + 'frontend/src/app/modules/messages/messages-controllers.js',
                 title: 'messages-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/messages/messages.html',
+                url: repository + 'frontend/src/app/modules/messages/messages.html',
                 title: 'messages.html',
                 info: types.generic.template
               }
@@ -346,7 +346,7 @@
               }
             ]
           },
-          'examples.chat': {
+          'modules.chat': {
             'Backend': [
               {
                 url: repository + 'backend/api/models/Message.js',
@@ -361,27 +361,27 @@
             ],
             'Frontend': [
               {
-                url: repository + 'frontend/src/app/examples/chat/chat.js',
+                url: repository + 'frontend/src/app/modules/chat/chat.js',
                 title: 'chat.js',
                 info: types.frontend.module
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-controllers.js',
+                url: repository + 'frontend/src/app/modules/chat/chat-controllers.js',
                 title: 'chat-controllers.js',
                 info: types.generic.controller
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-directives.js',
+                url: repository + 'frontend/src/app/modules/chat/chat-directives.js',
                 title: 'chat-directives.js',
                 info: types.frontend.directive
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat-models.js',
+                url: repository + 'frontend/src/app/modules/chat/chat-models.js',
                 title: 'chat-models.js',
                 info: types.generic.model
               },
               {
-                url: repository + 'frontend/src/app/examples/chat/chat.html',
+                url: repository + 'frontend/src/app/modules/chat/chat.html',
                 title: 'chat.html',
                 info: types.generic.template
               }
@@ -409,9 +409,9 @@
             var files = data[state];
 
             switch (state) {
-              case 'examples.books':
-              case 'examples.authors':
-              case 'examples.chat':
+              case 'modules.books':
+              case 'modules.authors':
+              case 'modules.chat':
                 files = _.merge(files, generic.backend, generic.frontend);
                 break;
               default:

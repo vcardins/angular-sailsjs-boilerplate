@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.messages' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.modules.messages' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -13,7 +13,7 @@
    *  1) Make example about $http / $sailsSocket usage where automatic message is disabled.
    *  2) Make example about invalid JWT
    */
-  angular.module('frontend.examples.messages')
+  angular.module('frontend.modules.messages')
     .controller('MessagesController', [
       '$scope', '$http', '$sailsSocket',
       'MessageService', 'BackendConfig',

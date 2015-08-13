@@ -5,26 +5,26 @@
  *  Directives
  *  Models
  *
- * All of these are wrapped to 'frontend.examples.chat' angular module.
+ * All of these are wrapped to 'frontend.modules.chat' angular module.
  */
 (function() {
   'use strict';
 
-  // Define frontend.examples.chat angular module
-  angular.module('frontend.examples.chat', []);
+  // Define frontend.modules.chat angular module
+  angular.module('frontend.modules.chat', []);
 
   // Module configuration
-  angular.module('frontend.examples.chat')
+  angular.module('frontend.modules.chat')
     .config([
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
           // Chat
-          .state('examples.chat', {
-            url: '/examples/chat',
+          .state('modules.chat', {
+            url: '/modules/chat',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/chat/chat.html',
+                templateUrl: '/frontend/modules/chat/chat.html',
                 controller: 'ChatController',
                 resolve: {
                   _messages: [

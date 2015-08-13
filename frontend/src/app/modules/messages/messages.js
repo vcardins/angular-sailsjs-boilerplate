@@ -3,26 +3,26 @@
  *
  *  Controllers
  *
- * All of these are wrapped to 'frontend.examples.messages' angular module.
+ * All of these are wrapped to 'frontend.modules.messages' angular module.
  */
 (function() {
   'use strict';
 
-  // Define frontend.examples.messages angular module
-  angular.module('frontend.examples.messages', []);
+  // Define frontend.modules.messages angular module
+  angular.module('frontend.modules.messages', []);
 
   // Module configuration
-  angular.module('frontend.examples.messages')
+  angular.module('frontend.modules.messages')
     .config([
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
           // Messages
-          .state('examples.messages', {
-            url: '/examples/messages',
+          .state('modules.messages', {
+            url: '/modules/messages',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/messages/messages.html',
+                templateUrl: '/frontend/modules/messages/messages.html',
                 controller: 'MessagesController'
               }
             }

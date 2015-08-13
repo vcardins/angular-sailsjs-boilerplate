@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.author' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.modules.author' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -7,7 +7,7 @@
   'use strict';
 
   // Controller for new author creation.
-  angular.module('frontend.examples.author')
+  angular.module('frontend.modules.author')
     .controller('AuthorAddController', [
       '$scope', '$state',
       'MessageService', 'AuthorModel',
@@ -32,7 +32,7 @@
               function onSuccess(result) {
                 MessageService.success('New author added successfully');
 
-                $state.go('examples.author', {id: result.data.id});
+                $state.go('modules.author', {id: result.data.id});
               }
             )
           ;
@@ -42,7 +42,7 @@
   ;
 
   // Controller to show single author on GUI.
-  angular.module('frontend.examples.author')
+  angular.module('frontend.modules.author')
     .controller('AuthorController', [
       '$scope', '$state',
       'UserService', 'MessageService',
@@ -102,7 +102,7 @@
               function onSuccess() {
                 MessageService.success('Author "' + $scope.author.name + '" deleted successfully');
 
-                $state.go('examples.authors');
+                $state.go('modules.authors');
               }
             )
           ;
@@ -112,7 +112,7 @@
   ;
 
   // Controller which contains all necessary logic for author list GUI on boilerplate application.
-  angular.module('frontend.examples.author')
+  angular.module('frontend.modules.author')
     .controller('AuthorListController', [
       '$scope', '$q', '$timeout',
       '_',

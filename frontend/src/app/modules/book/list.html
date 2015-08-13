@@ -4,7 +4,7 @@
     <div class="col-xs-6 pull-right list-search">
         <a
             data-ng-if="user.admin"
-            data-ui-sref="examples.book.add"
+            data-ui-sref="modules.book.add"
             data-tooltip="Add new book"
         ><i class="fa fa-plus-circle"></i></a>
 
@@ -53,10 +53,10 @@
             data-ng-repeat="book in items"
         >
             <td class="col-md-9">
-                <a data-ui-sref="examples.book({id: book.id})">{{book.title}}</a>
+                <a data-ui-sref="modules.book({id: book.id})">{{book.title}}</a>
             </td>
             <td class="col-md-2">
-                <a data-ui-sref="examples.author({id: getAuthor(book.author, 'id')})"
+                <a data-ui-sref="modules.author({id: getAuthor(book.author, 'id')})"
                    data-ng-show="getAuthor(book.author, 'id', true) !== true"
                 >
                     {{getAuthor(book.author, 'name')}}

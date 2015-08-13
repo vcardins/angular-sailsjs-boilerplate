@@ -1,11 +1,11 @@
 /**
  * Angular module for examples component. This component is divided to following logical components:
  *
- *  frontend.examples.about
- *  frontend.examples.author
- *  frontend.examples.book
- *  frontend.examples.chat
- *  frontend.examples.messages
+ *  frontend.modules.about
+ *  frontend.modules.author
+ *  frontend.modules.book
+ *  frontend.modules.chat
+ *  frontend.modules.messages
  *
  * Each component has it own configuration for ui-router.
  */
@@ -13,21 +13,21 @@
   'use strict';
 
   // Define frontend.admin module
-  angular.module('frontend.examples', [
-    'frontend.examples.about',
-    'frontend.examples.author',
-    'frontend.examples.book',
-    'frontend.examples.chat',
-    'frontend.examples.messages'
+  angular.module('frontend.modules', [
+    'frontend.modules.about',
+    'frontend.modules.author',
+    'frontend.modules.book',
+    'frontend.modules.chat',
+    'frontend.modules.messages'
   ]);
 
   // Module configuration
-  angular.module('frontend.examples')
+  angular.module('frontend.modules')
     .config([
       '$stateProvider',
       function($stateProvider) {
         $stateProvider
-          .state('examples', {
+          .state('modules', {
             parent: 'frontend',
             data: {
               access: 1
@@ -37,7 +37,7 @@
                 controller: [
                   '$state',
                   function($state) {
-                    $state.go('examples.books');
+                    $state.go('modules.books');
                   }
                 ]
               },
@@ -48,7 +48,7 @@
                   _items: [
                     'ContentNavigationItems',
                     function resolve(ContentNavigationItems) {
-                      return ContentNavigationItems.getItems('examples');
+                      return ContentNavigationItems.getItems('modules');
                     }
                   ]
                 }

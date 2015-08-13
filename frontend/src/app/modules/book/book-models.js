@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular model definitions for 'frontend.examples.book' module.
+ * This file contains all necessary Angular model definitions for 'frontend.modules.book' module.
  *
  * Note that this file should only contain models and nothing else. Also note that these "models" are just basically
  * services that wraps all things together.
@@ -10,7 +10,7 @@
   /**
    * Model for Book API, this is used to wrap all Book objects specified actions and data change actions.
    */
-  angular.module('frontend.examples.book')
+  angular.module('frontend.modules.book')
     .factory('BookModel', [
       'DataModel',
       function factory(DataModel) {

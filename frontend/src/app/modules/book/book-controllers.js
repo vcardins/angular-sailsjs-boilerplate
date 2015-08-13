@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.examples.book' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.modules.book' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -7,7 +7,7 @@
   'use strict';
 
   // Controller for new book creation.
-  angular.module('frontend.examples.book')
+  angular.module('frontend.modules.book')
     .controller('BookAddController', [
       '$scope', '$state',
       'MessageService',
@@ -41,7 +41,7 @@
               function onSuccess(result) {
                 MessageService.success('New book added successfully');
 
-                $state.go('examples.book', {id: result.data.id});
+                $state.go('modules.book', {id: result.data.id});
               }
             )
           ;
@@ -51,7 +51,7 @@
   ;
 
   // Controller to show single book on GUI.
-  angular.module('frontend.examples.book')
+  angular.module('frontend.modules.book')
     .controller('BookController', [
       '$scope', '$state',
       'UserService', 'MessageService',
@@ -119,7 +119,7 @@
               function onSuccess() {
                 MessageService.success('Book "' + $scope.book.title + '" deleted successfully');
 
-                $state.go('examples.books');
+                $state.go('modules.books');
               }
             )
           ;
@@ -150,7 +150,7 @@
   ;
 
   // Controller which contains all necessary logic for book list GUI on boilerplate application.
-  angular.module('frontend.examples.book')
+  angular.module('frontend.modules.book')
     .controller('BookListController', [
       '$scope', '$q', '$timeout',
       '_',

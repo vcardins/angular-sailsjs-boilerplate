@@ -78,7 +78,7 @@
                     <tbody>
                         <tr data-ng-repeat="book in books">
                             <td>
-                                <a data-ui-sref="examples.book({id: book.id})">{{book.title}}</a>
+                                <a data-ui-sref="modules.book({id: book.id})">{{book.title}}</a>
                             </td>
                             <td class="text-right">
                                 {{book.releaseDate | amDateFormat: 'YYYY'}}

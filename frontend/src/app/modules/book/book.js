@@ -4,26 +4,26 @@
  *  Controllers
  *  Models
  *
- * All of these are wrapped to 'frontend.examples.book' angular module.
+ * All of these are wrapped to 'frontend.modules.book' angular module.
  */
 (function() {
   'use strict';
 
-  // Define frontend.examples.book angular module
-  angular.module('frontend.examples.book', []);
+  // Define frontend.modules.book angular module
+  angular.module('frontend.modules.book', []);
 
   // Module configuration
-  angular.module('frontend.examples.book')
+  angular.module('frontend.modules.book')
     .config([
       '$stateProvider',
       function config($stateProvider) {
         $stateProvider
           // Book list
-          .state('examples.books', {
-            url: '/examples/books',
+          .state('modules.books', {
+            url: '/modules/books',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/book/list.html',
+                templateUrl: '/frontend/modules/book/list.html',
                 controller: 'BookListController',
                 resolve: {
                   _items: [
@@ -61,11 +61,11 @@
           })
 
           // Single book
-          .state('examples.book', {
-            url: '/examples/book/:id',
+          .state('modules.book', {
+            url: '/modules/book/:id',
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/book/book.html',
+                templateUrl: '/frontend/modules/book/book.html',
                 controller: 'BookController',
                 resolve: {
                   _book: [
@@ -84,14 +84,14 @@
           })
 
           // Add new book
-          .state('examples.book.add', {
-            url: '/examples/book/add',
+          .state('modules.book.add', {
+            url: '/modules/book/add',
             data: {
               access: 2
             },
             views: {
               'content@': {
-                templateUrl: '/frontend/examples/book/add.html',
+                templateUrl: '/frontend/modules/book/add.html',
                 controller: 'BookAddController',
                 resolve: {
                   _authors: [
