@@ -3,6 +3,7 @@
  * component is divided to following logical components:
  *
  *  frontend.admin.login-history
+ *  frontend.admin.request-log 
  *
  * Also this file contains all necessary information about 'frontend.admin' module route definitions.
  */
@@ -11,7 +12,9 @@
 
   // Define frontend.admin module
   angular.module('frontend.admin', [
-    'frontend.admin.login-history'
+    'frontend.admin.login-history',
+    'frontend.admin.request-log',
+    'frontend.admin.user'
   ]);
 
   // Module configuration

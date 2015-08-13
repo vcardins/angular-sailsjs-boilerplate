@@ -62,12 +62,12 @@
           ],
           'admin': [
             {
-              state: '',
+              state: 'admin.users',
               title: 'Users',
               access: AccessLevels.admin
             },
             {
-              state: '',
+              state: 'admin.request-log',
               title: 'Request log',
               access: AccessLevels.admin
             },

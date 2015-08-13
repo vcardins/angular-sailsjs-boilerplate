@@ -146,9 +146,8 @@
         // Check for state change errors.
         $rootScope.$on('$stateChangeError', function stateChangeError(event, toState, toParams, fromState, fromParams, error) {
           event.preventDefault();
-
           $injector.get('MessageService')
-            .error('Error loading the page');
+            .error('Error loading the page :: ' + error.message);
 
           $state.get('error').error = {
             event: event,
