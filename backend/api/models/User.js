@@ -30,7 +30,17 @@ module.exports = _.merge(_.cloneDeep(require('../base/Model')), {
       type: 'boolean',
       defaultsTo: false
     },
-
+    
+    // Users
+    createdUsers: {
+      collection: 'User',
+      via: 'createdUser'
+    },
+    updatedUsers: {
+      collection: 'User',
+      via: 'updatedUser'
+    },
+    
     // Below is all specification for relations to another models
 
     // Passport configurations

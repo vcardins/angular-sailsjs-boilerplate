@@ -79,7 +79,8 @@ var Passport = {
      * https://github.com/balderdashy/waterline
      */
     user: {
-      model: 'User'
+      model: 'User',
+      required:true
     },
 
     /**
@@ -103,7 +104,6 @@ var Passport = {
     if (passport.hasOwnProperty('password')) {
       bcrypt.hash(passport.password, 10, function callback(error, hash) {
         passport.password = hash;
-
         next(error, passport);
       });
     } else {
