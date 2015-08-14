@@ -60,6 +60,13 @@
               access: AccessLevels.user
             }
           ],
+          'profile': [
+            {
+              state: 'profile.edit',
+              title: 'Profile',
+              access: AccessLevels.user
+            }
+          ],
           'admin': [
             {
               state: 'admin.users',
